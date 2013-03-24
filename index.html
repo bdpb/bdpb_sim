@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>BRAVELY DEFAULT PRAYING BRAGE育成シミュレータ的なの (勝手改造版)</title>
+    <meta charset="utf8"/>
+  </head>
+  <body>
+    <p>
+      ■BRAVELY DEFAULT PRAYING BRAGE育成シミュレータ的なの (勝手改造版)
+      <a href="http://www.geocities.jp/bdpb_2014/">本家</a>
+    </p>
+    <form name="data">
+      <div>
+        レベルキャップ <input name="levelCap" type="text" value="34" size="6" onchange="draw()"/>
+        <label><input name="beginner" type="checkbox"/>ビギナー</label>
+      </div>
+      <div>
+        <label><input name="bless" type="checkbox" onchange="charaload()"/>栄誉</label>
+        <select name="CharaRank" onchange="init()">
+          <option value="0">N</option>
+          <option value="1">R</option>
+          <option value="2" selected>R+</option>
+          <option value="3">SR</option>
+          <option value="4">SR+</option>
+        </select>
+        <select name="Chara" onchange="charaload()"><option value="0">未選択</option></select>
+      </div>
+      <div>
+        アビリティ:<span id="Ability"></span>
+      </div>
+      <div>
+        <table style="line-height: 1em">
+          <tr><td>レベル</td><td><input name="LV" type="text" size="6" onchange="reload()"></td></tr>
+          <tr><td>HP</td><td><input name="HP" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="HP_Abi"></span>)</td>
+          </tr> 
+          <tr><td>MP</td><td><input name="MP" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="MP_Abi"></span>)</td>
+          </tr> 
+          <tr>
+            <td>力</td><td><input name="STR" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="STR_Abi"></span>)</td>
+            <td><span id="STR_rate"></div></td>
+            <td><div>期待値(<span id="STR_mean"></span>)</div></td>
+          </tr> 
+          <tr><td>体力</td><td><input name="VIT" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="VIT_Abi"></span>)</td>
+            <td><span id="VIT_rate"></span></td>
+            <td><div>期待値(<span id="VIT_mean"></span>)</div></td>
+          </tr> 
+          <tr><td>知力</td><td><input name="INT" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="INT_Abi"></span>)</td>
+            <td><span id="INT_rate"></span></td>
+            <td><div>期待値(<span id="INT_mean"></span>)</div></td>
+          </tr> 
+          <tr><td>精神</td><td><input name="MEN" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="MEN_Abi"></span>)</td>
+            <td><span id="MEN_rate"></span></td>
+            <td><div>期待値(<span id="MEN_mean"></span>)</div></td>
+          </tr> 
+          <tr><td>素早さ</td><td><input name="AGI" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="AGI_Abi"></span>)</td>
+            <td><span id="AGI_rate"></span></td>
+            <td><div>期待値(<span id="AGI_mean"></span>)</div></td>
+          </tr>
+          <tr><td>器用さ</td><td><input name="DEX" type="text" size="6" onchange="reload()"></td>
+            <td>(<span id="DEX_Abi"></span>)</td>
+            <td><span id="DEX_rate"></span></td>
+            <td><div>期待値(<span id="DEX_mean"></span>)</div></td>
+          </tr>
+          <tr></tr>
+          <tr><td>総合pt</td><td><input name="PT" type="text" size="6"></td></tr>
+        </table>
+      </div>
+
+      <div>
+        <select name="AST"><option value=0>すっぴん</option></select>をつけて
+        <button type="button" onclick="MAIN(1)">+1</button>
+        <button type="button" onclick="MAIN(10)">+10</button>
+        <button type="button" onclick="MAIN(100)">MAXまで</button>
+        </br>
+        <button type="button" onclick="charaload()">リセット</button>
+      </div>
+      <hr>
+      <div>
+        <label><input name="ast_status_enable" type="checkbox" onchange="update_ast_status()"/>アスタリスク補正後のステータス</label>
+      </div>
+    </form>
+    <table id="ast_status">
+      <!-- ダミー後でここにテーブルデータが入る -->
+    </table>
+
+    <script language="JavaScript" src="js/data.js"> </script>
+    <script language="JavaScript" src="js/main.js"> </script>
+  </body>
+</html>
