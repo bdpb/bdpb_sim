@@ -1,4 +1,4 @@
-[BRAVELY DEFAULT PRAYING BRAGE育成シミュレータ的なの (勝手改造版)](http://bdpb.github.io/bdpb_sim/)
+[BRAVELY DEFAULT PRAYING BRAGE育成シミュレータ的なの (勝手に改造版)](http://bdpb.github.io/bdpb_sim/)
 
 [本家](http://www.geocities.jp/bdpb_2014/) に↓の機能を追加してます。
 
