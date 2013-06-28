@@ -46,7 +46,7 @@ function MAIN(intCount) {
   var c = currentChara;
   var intAST  = parseInt(document.data.AST.value);
   var ast = tblAstarisk[intAST];
-  var intMaxLv = (document.data.beginner.checked) ? 10 : parseInt(document.data.levelCap.value); ;
+  var intMaxLv = (document.data.beginner.checked) ? 10 : parseInt(document.data.levelCap.value) ;
 
   for (i = 0; i < intCount; i++) {
     if (c.LV < intMaxLv) {
@@ -144,6 +144,15 @@ function charaload() {
   });
 
   draw();
+}
+
+function adjust_levelcap() {
+  var intMaxLv = parseInt(document.data.levelCap.value);
+
+  if (intMaxLv > 40)
+    document.data.levelCap.value = 40
+  else if (intMaxLv < 1)
+    document.data.levelCap.value = 1
 }
 
 function update_ast_status() {
