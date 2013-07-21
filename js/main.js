@@ -1,5 +1,6 @@
 var currentChara;
 var tblCharaCurrent;
+var levelCapLimit = 50;
 
 var Chara = function(intChara) {
   this.id  = intChara;
@@ -149,10 +150,10 @@ function charaload() {
 function adjust_levelcap() {
   var intMaxLv = parseInt(document.data.levelCap.value);
 
-  if (intMaxLv > 40)
-    document.data.levelCap.value = 40
+  if (intMaxLv > levelCapLimit)
+    document.data.levelCap.value = levelCapLimit;
   else if (intMaxLv < 1)
-    document.data.levelCap.value = 1
+    document.data.levelCap.value = 1;
 }
 
 function update_ast_status() {
